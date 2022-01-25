@@ -1,0 +1,108 @@
+append variables
+  -
+    var featuresnew= [
+      {
+        icon:`4.png`,
+        title:'High Conversions',
+        alt: 'Dashboard',
+        details: 'A pseudo-Latin text used in web design, layout.'
+      },
+      {
+        icon:`5.png`,
+        title:'Save on Acquisition',
+        alt: 'Comment',
+        details: 'A pseudo-Latin text used in web design, layout.'
+      },
+      {
+        icon:`6.png`,
+        title:'Increase Visitor Trust',
+        alt: 'Tailored',
+        details: 'A pseudo-Latin text used in web design, layout.'
+      },
+      {
+        icon:`7.png`,
+        title:'Social Influence',
+        alt: 'Dashboard',
+        details: 'A pseudo-Latin text used in web design, layout.'
+      },
+      {
+        icon:`8.png`,
+        title:'Activity Notifications',
+        alt: 'Dashboard',
+        details: 'A pseudo-Latin text used in web design, layout.'
+      },
+      {
+        icon:`9.png`,
+        title:'Customer Journeys',
+        alt: 'Dashboard',
+        details: 'A pseudo-Latin text used in web design, layout.'
+      },
+      {
+        icon:`10.png`,
+        title:'Custom Timing',
+        alt: 'Dashboard',
+        details: 'A pseudo-Latin text used in web design, layout.'
+      },
+      {
+        icon:`11.png`,
+        title:'Live Visitor Count',
+        alt: 'Dashboard',
+        details: 'A pseudo-Latin text used in web design, layout.'
+      },
+      {
+        icon:`12.png`,
+        title:'Visitor Identification',
+        alt: 'Dashboard',
+        details: 'A pseudo-Latin text used in web design, layout.'
+      },
+      {
+        icon:`13.png`,
+        title:'Custome Rules',
+        alt: 'Dashboard',
+        details: 'A pseudo-Latin text used in web design, layout.'
+      },
+      {
+        icon:`14.png`,
+        title:'Mobile Optimized',
+        alt: 'Dashboard',
+        details: 'A pseudo-Latin text used in web design, layout.'
+      },
+      {
+        icon:`15.png`,
+        title:'Language Translation',
+        alt: 'Dashboard',
+        details: 'A pseudo-Latin text used in web design, layout.'
+      }
+    ];
+mixin NewFeatureItem(item) 
+  .col-md-6.col-lg-3
+    .text-center
+      .p-1
+        img(src=`${CWD}assets/img/icons/${item.icon}` alt=`${item.alt}` style={width:'95px',height:'90px'})
+        h4.pt-3.lh-base #{item.title}
+        p.fs-0 #{item.details}
+        
+mixin Features
+  +Section#feature
+    .container
+      h1.text-center.display-5.fw-semi-bold(data-zanim-xs!={delay: 0.5} data-zanim-trigger='scroll')   Proof makes increasing conversion simple
+      p.text-center.fs-0.fs-md-1(data-zanim-xs!={delay: 0.4} data-zanim-trigger='scroll')  Getting a conversion boost didn't used to be this easy. Luckily, you found Proof. Now 
+        br.d-none.d-lg-block
+        | you have the tools to let your customer do the selling for you.
+      .row.mb-2.mt-6
+        +NewFeatureItem(featuresnew[0])
+        +NewFeatureItem(featuresnew[1]) 
+        +NewFeatureItem(featuresnew[2])
+        +NewFeatureItem(featuresnew[3])
+      .row.mb-4
+        +NewFeatureItem(featuresnew[4]) 
+        +NewFeatureItem(featuresnew[5])
+        +NewFeatureItem(featuresnew[6])
+        +NewFeatureItem(featuresnew[7])
+      .row.mb-4
+        +NewFeatureItem(featuresnew[8]) 
+        +NewFeatureItem(featuresnew[9])
+        +NewFeatureItem(featuresnew[10])
+        +NewFeatureItem(featuresnew[11])
+    
+

@@ -1,0 +1,22 @@
+append variables
+  - var items = ['specific access/rights by users', 'Physical and virtual Mastercards with adjestable payment limits', 'Dashboards to follow-up on your expenses']
+  - var points = ['Unlimited history', 'REad-only access for your accountant', 'Plug-and-play for accounting tools']
+mixin Autopilot2
+  section
+      .container#auto
+        .row.align-items-center
+          .col-md-6.text-md-start
+            h4.fs-2.fw-normal Monitor your expenses
+            ul.list-unstyled
+              each item in items      
+                li.mb-3.text-900.fs-0
+                  span.far.fa-check-circle.text-700.me-2
+                  =item 
+          .col-md-6.mt-4.mt-md-0.text-start
+            h4.fs-2.fw-normal Make accounting easier
+            ul.list-unstyled
+              each item in items      
+                li.mb-3.text-900.fs-0
+                  span.far.fa-check-circle.text-700.me-2
+                  =item 
+          
