@@ -1,27 +1,27 @@
-import utils from "./utils";
+import utils from './utils';
 /*-----------------------------------------------
 |   Top navigation opacity on scroll
 -----------------------------------------------*/
 const navbarInit = () => {
   const Selector = {
-    NAVBAR: "[data-navbar-on-scroll]",
-    NAVBAR_COLLAPSE: ".navbar-collapse",
-    NAVBAR_TOGGLER: ".navbar-toggler",
+    NAVBAR: '[data-navbar-on-scroll]',
+    NAVBAR_COLLAPSE: '.navbar-collapse',
+    NAVBAR_TOGGLER: '.navbar-toggler'
   };
 
   const ClassNames = {
-    COLLAPSED: "collapsed",
+    COLLAPSED: 'collapsed'
   };
 
   const Events = {
-    SCROLL: "scroll",
-    SHOW_BS_COLLAPSE: "show.bs.collapse",
-    HIDE_BS_COLLAPSE: "hide.bs.collapse",
-    HIDDEN_BS_COLLAPSE: "hidden.bs.collapse",
+    SCROLL: 'scroll',
+    SHOW_BS_COLLAPSE: 'show.bs.collapse',
+    HIDE_BS_COLLAPSE: 'hide.bs.collapse',
+    HIDDEN_BS_COLLAPSE: 'hidden.bs.collapse'
   };
 
   const DataKey = {
-    NAVBAR_ON_SCROLL: "navbar-light-on-scroll",
+    NAVBAR_ON_SCROLL: 'navbar-on-scroll'
   };
 
   const navbar = document.querySelector(Selector.NAVBAR);
@@ -30,17 +30,16 @@ const navbarInit = () => {
     const windowHeight = window.innerHeight;
     const html = document.documentElement;
     const navbarCollapse = navbar.querySelector(Selector.NAVBAR_COLLAPSE);
-    const allColors = { ...utils.colors, ...utils.grays };
 
     const name = utils.getData(navbar, DataKey.NAVBAR_ON_SCROLL);
-    const colorName = Object.keys(allColors).includes(name) ? name : "light";
-    const color = allColors[colorName];
+    const colorName = name ? name : 'light';
+    const color = utils.getColor(colorName);
     const bgClassName = `bg-${colorName}`;
-    const shadowName = "shadow-transition";
+    const shadowName = 'shadow-transition';
     const colorRgb = utils.hexToRgb(color);
     const { backgroundImage } = window.getComputedStyle(navbar);
-    const transition = "background-color 0.35s ease";
-    navbar.style.backgroundImage = "none";
+    const transition = 'background-color 0.35s ease';
+    navbar.style.backgroundImage = 'none';
 
     // Change navbar background color on scroll
     window.addEventListener(Events.SCROLL, () => {
@@ -49,10 +48,8 @@ const navbarInit = () => {
       alpha >= 1 && (alpha = 1);
       navbar.style.backgroundColor = `rgba(${colorRgb[0]}, ${colorRgb[1]}, ${colorRgb[2]}, ${alpha})`;
       navbar.style.backgroundImage =
-        alpha > 0 || utils.hasClass(navbarCollapse, "show")
-          ? backgroundImage
-          : "none";
-      alpha > 0 || utils.hasClass(navbarCollapse, "show")
+        alpha > 0 || utils.hasClass(navbarCollapse, 'show') ? backgroundImage : 'none';
+      alpha > 0 || utils.hasClass(navbarCollapse, 'show')
         ? navbar.classList.add(shadowName)
         : navbar.classList.remove(shadowName);
     });
@@ -61,15 +58,10 @@ const navbarInit = () => {
     utils.resize(() => {
       const breakPoint = utils.getBreakpoint(navbar);
       if (window.innerWidth > breakPoint) {
-        navbar.style.backgroundImage = html.scrollTop
-          ? backgroundImage
-          : "none";
-        navbar.style.transition = "none";
+        navbar.style.backgroundImage = html.scrollTop ? backgroundImage : 'none';
+        navbar.style.transition = 'none';
       } else if (
-        !utils.hasClass(
-          navbar.querySelector(Selector.NAVBAR_TOGGLER),
-          ClassNames.COLLAPSED
-        )
+        !utils.hasClass(navbar.querySelector(Selector.NAVBAR_TOGGLER), ClassNames.COLLAPSED)
       ) {
         navbar.classList.add(bgClassName);
         navbar.classList.add(shadowName);
@@ -77,9 +69,7 @@ const navbarInit = () => {
       }
 
       if (window.innerWidth <= breakPoint) {
-        navbar.style.transition = utils.hasClass(navbarCollapse, "show")
-          ? transition
-          : "none";
+        navbar.style.transition = utils.hasClass(navbarCollapse, 'show') ? transition : 'none';
       }
     });
 
@@ -93,11 +83,11 @@ const navbarInit = () => {
     navbarCollapse.addEventListener(Events.HIDE_BS_COLLAPSE, () => {
       navbar.classList.remove(bgClassName);
       navbar.classList.remove(shadowName);
-      !html.scrollTop && (navbar.style.backgroundImage = "none");
+      !html.scrollTop && (navbar.style.backgroundImage = 'none');
     });
 
     navbarCollapse.addEventListener(Events.HIDDEN_BS_COLLAPSE, () => {
-      navbar.style.transition = "none";
+      navbar.style.transition = 'none';
     });
   }
 };
