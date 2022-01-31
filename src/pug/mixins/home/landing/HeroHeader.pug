@@ -1,12 +1,12 @@
 mixin HeroHeader
   section.hero-section.py-7.py-lg-10#home
     +Background({image: `${CWD}assets/img/illustration/2.png`, attrs: { style: { 'background-position': 'left top', 'background-size': '800px auto'} }, className: 'bg-size' })
-    +Background({image: `${CWD}assets/img/illustration/1.png`, attrs: { style: { 'background-position': 'right top'} }, className: 'bg-size d-none d-lg-block hero-bg' })
-    .container.h-100
+    +Background({image: `${CWD}assets/img/illustration/1.png`, attrs: { style: { 'background-position': 'right top'} }, className: 'd-none d-lg-block hero-bg' })
+    .container
       .row.align-items-center.h-100.justify-content-center.justify-content-lg-start
         .col-md-9.col-lg-6.col-xxl-5.text-md-start.text-center.py-6.pt-8
-          h1.fs-4.fs-md-4.fs-xxl-4.fw-bold(data-zanim-xs!={delay: 0.4} data-zanim-trigger='scroll') Balance agility with stability
-          p.fs-1.fs-sm-0.fs-xxl-0.mb-3(data-zanim-xs!={delay: 0.5} data-zanim-trigger='scroll') Gohub monitors application stability, so you can make data-driven decision on whether you should be building new features, or fixing bugs. 
+          h1.fs-4.fs-md-4.fs-xxl-4(data-zanim-xs!={delay: 0.3} data-zanim-trigger='scroll') Balance agility with stability
+          p.fs-1(data-zanim-xs!={delay: 0.5} data-zanim-trigger='scroll') Gohub monitors application stability, so you can make data-driven decision on whether you should be building new features, or fixing bugs. 
           .d-flex.flex-column.flex-sm-row.justify-content-center.justify-content-md-start(data-zanim-xs!={delay: 0.5} data-zanim-trigger='scroll')
             a.btn.btn-sm.btn-primary.me-1(href='#!' role='button') Get started
             a.btn.btn-sm.btn-default(href='#' role='button') Questions? Talk to our team

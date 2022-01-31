@@ -3,10 +3,6 @@
     "src": ["dist/js/bootstrap.min.js", "dist/js/bootstrap.min.js.map"],
     "dest": "bootstrap"
   },
-  "prismjs": {
-    "src": ["prism.js", "themes/prism.css"],
-    "dest": "prism"
-  },
   "is_js": {
     "src": "is.min.js",
     "dest": "is"

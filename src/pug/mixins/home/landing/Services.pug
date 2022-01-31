@@ -29,21 +29,18 @@ append variables
     ]
 mixin FeatureItem(item) 
   .col-md-6
-    .w-100.h-100.features-items.shadow
-      .p-5
-        img(src=`${CWD}assets/img/icons/${item.icon}` alt=`${item.alt}` style={width:'95px',height:'70px'})
-        h3.pt-3.lh-base #{item.title}
-        p.mb-0 #{item.details}
+    .w-100.h-100.p-5.shadow
+      img(src=`${CWD}assets/img/icons/${item.icon}` alt=`${item.alt}` style={width:'95px'})
+      h3.mt-3.lh-base #{item.title}
+      p.mb-0 #{item.details}
 mixin Card(text)
-  .col-md-6
-    .h-100.features-items.text-center.text-md-start
-      .p-0.p-md-5.pb-3
-        h2.pt-3 #{text.title}
-        p.mb-0 #{text.details}
+  .col-md-6.h-100.text-center.text-md-start.p-0.p-md-5.pb-3 
+    h2.mt-3 #{text.title}
+    p.mb-0 #{text.details}
         
 mixin Services
   +Section#service
-    .row.mb-4.mt-0
+    .row.mb-4
       +Card(texting[0]) 
       +FeatureItem(features[0]) 
     .row.mb-4

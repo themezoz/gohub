@@ -1,5 +1,5 @@
 mixin Navbar
-  nav.navbar.navbar-expand-lg.navbar-light.fixed-top.py-3.backdrop.d-block(data-navbar-on-scroll='light')
+  nav.navbar.navbar-expand-lg.navbar-light.fixed-top.py-3(data-navbar-on-scroll='light')
     .container
       a.navbar-brand(href='index.html')
           img(src=`${CWD}assets/img/icons/Logo.png` height="35"  alt='logo')
@@ -16,7 +16,6 @@ mixin Navbar
             a.nav-link(href='#section') Pricing
           li.nav-item.px-2
             a.nav-link(href='#autopilot') Docs  
-        form.d-flex.py-2.py-lg-0
-          button.btn.btn-primary(type='submit') Sign Up
+        button.btn.btn-primary Sign Up
           
 
