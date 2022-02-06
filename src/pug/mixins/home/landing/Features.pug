@@ -29,7 +29,7 @@ append variables
         icon:`8.png`,
         title:'Activity Notifications',
         alt: 'Dashboard',
-        details: 'Display recent sales and opt-ins on your pages and drive visitors to.'
+        details: 'Display recent sales and opt-ins on your pages and drive visitors.'
       },
       {
         icon:`9.png`,
@@ -71,7 +71,7 @@ append variables
         icon:`15.png`,
         title:'Language Translation',
         alt: 'Dashboard',
-        details: 'Translate recent activity notification into any language you want.'
+        details: 'Translate recent activity notification into any language.'
       }
     ];
 mixin NewFeatureItem(item) 
@@ -86,17 +86,17 @@ mixin Features
     p.text-center.fs-0.fs-md-1(data-zanim-xs!={delay: 0.5} data-zanim-trigger='scroll')  Getting a conversion boost didn't used to be this easy. Luckily, you found Proof. Now 
       br.d-none.d-lg-block
       | you have the tools to let your customer do the selling for you.
-    .row.mb-2.mt-6
+    .row.mb-4.mt-6
       +NewFeatureItem(featuresnew[0])
       +NewFeatureItem(featuresnew[1]) 
       +NewFeatureItem(featuresnew[2])
       +NewFeatureItem(featuresnew[3])
-    .row.mb-4
+    .row.mb-6
       +NewFeatureItem(featuresnew[4]) 
       +NewFeatureItem(featuresnew[5])
       +NewFeatureItem(featuresnew[6])
       +NewFeatureItem(featuresnew[7])
-    .row.mb-4
+    .row.mb-6
       +NewFeatureItem(featuresnew[8]) 
       +NewFeatureItem(featuresnew[9])
       +NewFeatureItem(featuresnew[10])
