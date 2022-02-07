@@ -71,22 +71,7 @@
 //     opacity:0;
 //   }
 // }
-.hero-section{
-  // padding: 5rem 0 0 0 !important;
-  @include media-breakpoint-up(md){
-    // height: 100vh;
-    // padding: 0 !important;
-  }
-  .hero-bg{
-    background-size: 55% 75% !important;
-    @include media-breakpoint-up(xl){
-      background-size: 55% 80% !important;
-    }
-    @include media-breakpoint-up(xxl){
-      background-size: 55% 100% !important;
-    }
-  }
-}
+
 .shadow{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
